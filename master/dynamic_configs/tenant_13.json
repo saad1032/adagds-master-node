@@ -1,0 +1,32 @@
+{
+  "id": "tenant_13",
+  "name": "SolariPower",
+  "subdomain": "solaripower.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": false,
+    "enablePremiumCharts": false,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4013,
+    "API_URL": "http://api.adagds.local/tenant_13",
+    "LOG_LEVEL": "info"
+  },
+  "dataSource": {
+    "database": "Redshift_Warehouse",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 14,
+    "timeoutMs": 1500
+  },
+  "theme": {
+    "primaryH": 216,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Outfit",
+    "icon": "☀️",
+    "borderRadius": "16px"
+  }
+}

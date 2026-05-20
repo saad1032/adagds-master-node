@@ -1,0 +1,32 @@
+{
+  "id": "tenant_19",
+  "name": "KryptonVault",
+  "subdomain": "kryptonvault.adagds.local",
+  "environment": "development",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": false,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4019,
+    "API_URL": "http://api.adagds.local/tenant_19",
+    "LOG_LEVEL": "warn"
+  },
+  "dataSource": {
+    "database": "InfluxDB_Timeseries",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 17,
+    "timeoutMs": 1500
+  },
+  "theme": {
+    "primaryH": 324,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Outfit",
+    "icon": "🔑",
+    "borderRadius": "16px"
+  }
+}

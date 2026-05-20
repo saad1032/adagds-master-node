@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Standalone Tenant...</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="tenant-body">
+  <div class="glass-bg-glow"></div>
+  
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-brand">
+        <div class="brand-logo" id="appIcon">⚡</div>
+        <div>
+          <h1 id="appName">Tenant App</h1>
+          <span class="badge" id="appSubdomain">tenant.local</span>
+        </div>
+      </div>
+      <div class="header-status">
+        <div class="status-indicator active"></div>
+        <span id="appStatus">Standalone Instance (Active)</span>
+      </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="app-grid">
+      <!-- Left Column: Identity & Theme Metadata -->
+      <section class="card glass-card span-4">
+        <h2>App Specification</h2>
+        <div class="info-list">
+          <div class="info-item">
+            <span class="info-label">Tenant ID:</span>
+            <span class="info-val" id="specId">--</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Environment:</span>
+            <span class="info-val" id="specEnv">--</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Host Port:</span>
+            <span class="info-val" id="specPort">--</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Log Location:</span>
+            <span class="info-val" id="specLog">--</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">Isolation Level:</span>
+            <span class="info-val status-val">Full VM/Process</span>
+          </div>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <h3>Theme Customization</h3>
+        <div class="theme-swatch-container">
+          <div class="swatch" id="primarySwatch"></div>
+          <div class="swatch-details">
+            <div id="themeFont">Font: Plus Jakarta Sans</div>
+            <div id="themeColors">HSL: H:0, S:0%, L:0%</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Center Column: Data Source Abstraction & Telemetry -->
+      <section class="card glass-card span-8">
+        <div class="card-header-actions">
+          <h2>Data Source Abstraction</h2>
+          <span class="badge badge-accent" id="dataSourceName">Loading SQL...</span>
+        </div>
+        
+        <div class="sql-query-bar">
+          <span class="sql-keyword">QUERY:</span>
+          <code id="sqlQueryText">SELECT * FROM stats;</code>
+        </div>
+
+        <div class="chart-container">
+          <!-- Dynamic SVG Chart -->
+          <svg viewBox="0 0 500 200" class="telemetry-chart" id="svgChart">
+            <defs>
+              <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--primary-color)" stop-opacity="0.4"/>
+                <stop offset="100%" stop-color="var(--primary-color)" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <!-- Chart line path will be injected here -->
+            <path d="" fill="url(#chartGrad)" id="chartArea" />
+            <path d="" fill="none" stroke="var(--primary-color)" stroke-width="3" id="chartLine" />
+            <!-- Vertical grid marks -->
+            <line x1="0" y1="200" x2="500" y2="200" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          </svg>
+        </div>
+
+        <!-- Telemetry Metrics Grid -->
+        <div class="metrics-grid" id="metricsGrid">
+          <div class="metric-box">
+            <span class="metric-title">DB Response</span>
+            <span class="metric-val" id="metricResp">4ms</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-title">Records Cache</span>
+            <span class="metric-val" id="metricCount">10</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-title">Query Status</span>
+            <span class="metric-val status-val" id="metricStatus">OK</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Optional Module: Multi-tenant Live Messaging Service -->
+      <section class="card glass-card span-6" id="chatSection" style="display:none;">
+        <h2>Dynamic Chat Module</h2>
+        <p class="section-desc">Feature flag <code>enableChat</code> is active. Fetching local chat logs...</p>
+        <div class="chat-box" id="chatBox">
+          <div class="chat-loading">Syncing secure socket...</div>
+        </div>
+        <div class="chat-input-row">
+          <input type="text" placeholder="Type inside this isolated client..." disabled />
+          <button class="btn btn-primary" style="padding: 6px 12px; font-size: 12px;">Send</button>
+        </div>
+      </section>
+
+      <!-- Feature Flags Audit -->
+      <section class="card glass-card span-6" id="featuresSection">
+        <h2>Active Feature Modules</h2>
+        <div class="feature-flag-list" id="featureFlagsList">
+          <!-- Dynamically populated feature flags -->
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>&copy; 2026 <strong id="footerBrand">ADAGDS</strong> Multi-Tenant Isolated Execution Engine. No shared runtime dependency.</p>
+    </footer>
+  </div>
+
+  <script src="client.js"></script>
+</body>
+</html>

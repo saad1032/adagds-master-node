@@ -1,0 +1,32 @@
+{
+  "id": "tenant_11",
+  "name": "GridVector",
+  "subdomain": "gridvector.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": true
+  },
+  "envSettings": {
+    "PORT": 4011,
+    "API_URL": "http://api.adagds.local/tenant_11",
+    "LOG_LEVEL": "warn"
+  },
+  "dataSource": {
+    "database": "TimescaleDB_Metrics",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 8,
+    "timeoutMs": 2000
+  },
+  "theme": {
+    "primaryH": 180,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Plus Jakarta Sans",
+    "icon": "📐",
+    "borderRadius": "16px"
+  }
+}

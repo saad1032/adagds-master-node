@@ -1,0 +1,32 @@
+{
+  "id": "tenant_04",
+  "name": "RetailFlow",
+  "subdomain": "retailflow.adagds.local",
+  "environment": "staging",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": false,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4004,
+    "API_URL": "http://api.adagds.local/tenant_04",
+    "LOG_LEVEL": "error"
+  },
+  "dataSource": {
+    "database": "Redis_Shared_Cache",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 17,
+    "timeoutMs": 1500
+  },
+  "theme": {
+    "primaryH": 54,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Roboto",
+    "icon": "🛒",
+    "borderRadius": "24px"
+  }
+}

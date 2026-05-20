@@ -1,0 +1,32 @@
+{
+  "id": "tenant_15",
+  "name": "LuminaDesign",
+  "subdomain": "luminadesign.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4015,
+    "API_URL": "http://api.adagds.local/tenant_15",
+    "LOG_LEVEL": "warn"
+  },
+  "dataSource": {
+    "database": "Oracle_Enterprise",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 20,
+    "timeoutMs": 2500
+  },
+  "theme": {
+    "primaryH": 252,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Montserrat",
+    "icon": "🎨",
+    "borderRadius": "16px"
+  }
+}

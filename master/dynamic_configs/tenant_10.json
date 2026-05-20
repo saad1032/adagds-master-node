@@ -1,0 +1,32 @@
+{
+  "id": "tenant_10",
+  "name": "ZenithCloud",
+  "subdomain": "zenithcloud.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": false,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4010,
+    "API_URL": "http://api.adagds.local/tenant_10",
+    "LOG_LEVEL": "debug"
+  },
+  "dataSource": {
+    "database": "Neo4j_Graph",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 20,
+    "timeoutMs": 1500
+  },
+  "theme": {
+    "primaryH": 162,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Montserrat",
+    "icon": "☁️",
+    "borderRadius": "24px"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "tenant_06",
+  "name": "CyberShield",
+  "subdomain": "cybershield.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": true
+  },
+  "envSettings": {
+    "PORT": 4006,
+    "API_URL": "http://api.adagds.local/tenant_06",
+    "LOG_LEVEL": "debug"
+  },
+  "dataSource": {
+    "database": "MariaDB_Main",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 8,
+    "timeoutMs": 2500
+  },
+  "theme": {
+    "primaryH": 90,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Outfit",
+    "icon": "🛡️",
+    "borderRadius": "24px"
+  }
+}

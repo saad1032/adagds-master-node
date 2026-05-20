@@ -1,0 +1,32 @@
+{
+  "id": "tenant_03",
+  "name": "NovaHealth",
+  "subdomain": "novahealth.adagds.local",
+  "environment": "staging",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4003,
+    "API_URL": "http://api.adagds.local/tenant_03",
+    "LOG_LEVEL": "warn"
+  },
+  "dataSource": {
+    "database": "Cassandra_Dist",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 14,
+    "timeoutMs": 2500
+  },
+  "theme": {
+    "primaryH": 36,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Outfit",
+    "icon": "🏥",
+    "borderRadius": "16px"
+  }
+}

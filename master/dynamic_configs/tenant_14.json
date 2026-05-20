@@ -1,0 +1,32 @@
+{
+  "id": "tenant_14",
+  "name": "VeloDelivery",
+  "subdomain": "velodelivery.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4014,
+    "API_URL": "http://api.adagds.local/tenant_14",
+    "LOG_LEVEL": "debug"
+  },
+  "dataSource": {
+    "database": "Snowflake_Stage",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 17,
+    "timeoutMs": 2000
+  },
+  "theme": {
+    "primaryH": 234,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Roboto",
+    "icon": "🚴",
+    "borderRadius": "24px"
+  }
+}

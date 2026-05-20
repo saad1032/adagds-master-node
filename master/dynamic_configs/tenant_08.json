@@ -1,0 +1,32 @@
+{
+  "id": "tenant_08",
+  "name": "OptimaTrade",
+  "subdomain": "optimatrade.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4008,
+    "API_URL": "http://api.adagds.local/tenant_08",
+    "LOG_LEVEL": "error"
+  },
+  "dataSource": {
+    "database": "Elasticsearch_Index",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 14,
+    "timeoutMs": 2000
+  },
+  "theme": {
+    "primaryH": 126,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Plus Jakarta Sans",
+    "icon": "📊",
+    "borderRadius": "24px"
+  }
+}

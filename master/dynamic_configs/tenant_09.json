@@ -1,0 +1,32 @@
+{
+  "id": "tenant_09",
+  "name": "HexaChain",
+  "subdomain": "hexachain.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": true,
+    "enablePremiumCharts": false,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4009,
+    "API_URL": "http://api.adagds.local/tenant_09",
+    "LOG_LEVEL": "info"
+  },
+  "dataSource": {
+    "database": "ClickHouse_Analytics",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 17,
+    "timeoutMs": 2500
+  },
+  "theme": {
+    "primaryH": 144,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Outfit",
+    "icon": "🔗",
+    "borderRadius": "16px"
+  }
+}

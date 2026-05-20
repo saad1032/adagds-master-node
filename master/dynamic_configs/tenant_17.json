@@ -1,0 +1,32 @@
+{
+  "id": "tenant_17",
+  "name": "AuraSocial",
+  "subdomain": "aurasocial.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": true,
+    "enablePremiumCharts": false,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4017,
+    "API_URL": "http://api.adagds.local/tenant_17",
+    "LOG_LEVEL": "info"
+  },
+  "dataSource": {
+    "database": "BigQuery_Storage",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 11,
+    "timeoutMs": 2000
+  },
+  "theme": {
+    "primaryH": 288,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Inter",
+    "icon": "💬",
+    "borderRadius": "16px"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "tenant_20",
+  "name": "OceanTide",
+  "subdomain": "oceantide.adagds.local",
+  "environment": "development",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4020,
+    "API_URL": "http://api.adagds.local/tenant_20",
+    "LOG_LEVEL": "error"
+  },
+  "dataSource": {
+    "database": "Memcached_Volatile",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 20,
+    "timeoutMs": 2000
+  },
+  "theme": {
+    "primaryH": 342,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Montserrat",
+    "icon": "🌊",
+    "borderRadius": "24px"
+  }
+}

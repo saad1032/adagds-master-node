@@ -1,0 +1,32 @@
+{
+  "id": "tenant_02",
+  "name": "ApexAnalytics",
+  "subdomain": "apexanalytics.adagds.local",
+  "environment": "staging",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4002,
+    "API_URL": "http://api.adagds.local/tenant_02",
+    "LOG_LEVEL": "debug"
+  },
+  "dataSource": {
+    "database": "PostgreSQL_Node1",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 11,
+    "timeoutMs": 2000
+  },
+  "theme": {
+    "primaryH": 18,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Inter",
+    "icon": "📈",
+    "borderRadius": "24px"
+  }
+}

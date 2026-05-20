@@ -1,0 +1,32 @@
+{
+  "id": "tenant_05",
+  "name": "QuantumSaaS",
+  "subdomain": "quantumsaas.adagds.local",
+  "environment": "staging",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": true,
+    "enablePremiumCharts": false,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4005,
+    "API_URL": "http://api.adagds.local/tenant_05",
+    "LOG_LEVEL": "info"
+  },
+  "dataSource": {
+    "database": "MongoDB_Replica",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 20,
+    "timeoutMs": 2000
+  },
+  "theme": {
+    "primaryH": 72,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Montserrat",
+    "icon": "⚛️",
+    "borderRadius": "16px"
+  }
+}

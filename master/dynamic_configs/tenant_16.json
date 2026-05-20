@@ -1,0 +1,32 @@
+{
+  "id": "tenant_16",
+  "name": "CoreDynamics",
+  "subdomain": "coredynamics.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": false,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": true
+  },
+  "envSettings": {
+    "PORT": 4016,
+    "API_URL": "http://api.adagds.local/tenant_16",
+    "LOG_LEVEL": "error"
+  },
+  "dataSource": {
+    "database": "Firestore_Client",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 8,
+    "timeoutMs": 1500
+  },
+  "theme": {
+    "primaryH": 270,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Outfit",
+    "icon": "⚙️",
+    "borderRadius": "24px"
+  }
+}

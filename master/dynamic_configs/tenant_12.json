@@ -1,0 +1,32 @@
+{
+  "id": "tenant_12",
+  "name": "InfiniSafe",
+  "subdomain": "infinisafe.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4012,
+    "API_URL": "http://api.adagds.local/tenant_12",
+    "LOG_LEVEL": "error"
+  },
+  "dataSource": {
+    "database": "CockroachDB_Local",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 11,
+    "timeoutMs": 2500
+  },
+  "theme": {
+    "primaryH": 198,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Inter",
+    "icon": "🔒",
+    "borderRadius": "24px"
+  }
+}

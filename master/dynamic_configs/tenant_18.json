@@ -1,0 +1,32 @@
+{
+  "id": "tenant_18",
+  "name": "StellarMaps",
+  "subdomain": "stellarmaps.adagds.local",
+  "environment": "production",
+  "features": {
+    "enableChat": false,
+    "enableAnalytics": true,
+    "enablePremiumCharts": true,
+    "darkTheme": true,
+    "realtimeData": false
+  },
+  "envSettings": {
+    "PORT": 4018,
+    "API_URL": "http://api.adagds.local/tenant_18",
+    "LOG_LEVEL": "debug"
+  },
+  "dataSource": {
+    "database": "ScyllaDB_Node",
+    "queryType": "WRITE_INTENSIVE",
+    "limit": 14,
+    "timeoutMs": 2500
+  },
+  "theme": {
+    "primaryH": 306,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Plus Jakarta Sans",
+    "icon": "🗺️",
+    "borderRadius": "24px"
+  }
+}

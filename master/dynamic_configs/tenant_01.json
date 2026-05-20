@@ -1,0 +1,32 @@
+{
+  "id": "tenant_01",
+  "name": "AeroDashboard",
+  "subdomain": "aerodashboard.adagds.local",
+  "environment": "staging",
+  "features": {
+    "enableChat": true,
+    "enableAnalytics": false,
+    "enablePremiumCharts": false,
+    "darkTheme": true,
+    "realtimeData": true
+  },
+  "envSettings": {
+    "PORT": 4001,
+    "API_URL": "http://api.adagds.local/tenant_01",
+    "LOG_LEVEL": "info"
+  },
+  "dataSource": {
+    "database": "SQLite_Isolated",
+    "queryType": "READ_OPTIMIZED",
+    "limit": 8,
+    "timeoutMs": 1500
+  },
+  "theme": {
+    "primaryH": 0,
+    "primaryS": "85%",
+    "primaryL": "52%",
+    "font": "Plus Jakarta Sans",
+    "icon": "⚡",
+    "borderRadius": "16px"
+  }
+}

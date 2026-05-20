@@ -1,0 +1,17 @@
+{
+  "name": "adagds-master",
+  "version": "1.0.0",
+  "description": "Adaptive Distributed Application Generation & Deployment System Master Node",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "verify": "node verify.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "systeminformation": "^5.22.9"
+  }
+}

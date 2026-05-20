@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADAGDS - Master Node Coordinator</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="master-body">
+  <div class="glow-bg-1"></div>
+  <div class="glow-bg-2"></div>
+
+  <div class="dashboard-wrapper">
+    <!-- Main Header -->
+    <header class="main-header">
+      <div class="header-logo-section">
+        <div class="cube-logo">🕸️</div>
+        <div>
+          <h1>ADAGDS Master Node</h1>
+          <span class="system-tag">Adaptive Distributed Application Generation & Deployment System</span>
+        </div>
+      </div>
+      <div class="system-time-stamp">
+        <span class="pulse-dot"></span>
+        <span id="currentTime">SYSTEM RUNNING LIVE</span>
+      </div>
+    </header>
+
+    <!-- Top Grid: Analytics & Control Panels -->
+    <div class="dashboard-grid">
+      
+      <!-- Panel 1: Resource Analyzer (Capacity Gauge) -->
+      <section class="card glass-card span-5">
+        <div class="card-header">
+          <h2>System Resource Scan</h2>
+          <button class="btn btn-secondary btn-small" id="btnScanResources">Scan Specs</button>
+        </div>
+        <p class="card-desc">Monitors live host specs to calculate hardware scores and prevent build-thrashing.</p>
+        
+        <div class="gauge-row">
+          <div class="gauge-circle">
+            <svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="40" />
+              <circle class="meter" id="cpuMeter" cx="50" cy="50" r="40" style="stroke-dashoffset: 251;" />
+            </svg>
+            <div class="gauge-center">
+              <span id="cpuText">0%</span>
+              <small>CPU LOAD</small>
+            </div>
+          </div>
+
+          <div class="gauge-circle">
+            <svg viewBox="0 0 100 100">
+              <circle class="bg" cx="50" cy="50" r="40" />
+              <circle class="meter" id="ramMeter" cx="50" cy="50" r="40" style="stroke-dashoffset: 251;" />
+            </svg>
+            <div class="gauge-center">
+              <span id="ramText">0.0 GB</span>
+              <small>FREE RAM</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="hardware-specs-list">
+          <div class="spec-row">
+            <span>CPU Threads:</span>
+            <strong id="specCpuCores">--</strong>
+          </div>
+          <div class="spec-row">
+            <span>Total RAM:</span>
+            <strong id="specRamTotal">--</strong>
+          </div>
+          <div class="spec-row">
+            <span>Active RAM:</span>
+            <strong id="specRamActive">--</strong>
+          </div>
+          <div class="spec-row">
+            <span>GPU Adapter:</span>
+            <strong id="specGpu">--</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 2: Adaptive Workload Decision & Override -->
+      <section class="card glass-card span-7">
+        <div class="card-header">
+          <h2>Workload Adaptive Decision Engine</h2>
+          <span class="decision-pill" id="decisionStatus">Awaiting Execution</span>
+        </div>
+        <p class="card-desc">Decision outcome computed dynamically to fit system limits (Scales 2 to 20).</p>
+
+        <div class="decision-math-box">
+          <div class="math-stat">
+            <span class="math-label">DECIDED APP COUNT</span>
+            <span class="math-val" id="decidedAppCount">--</span>
+          </div>
+          <div class="math-stat">
+            <span class="math-label">PARALLEL CONCURRENCY</span>
+            <span class="math-val" id="decidedConcurrency">--</span>
+          </div>
+        </div>
+
+        <div class="analyzer-reasoning">
+          <strong>Decision Log:</strong>
+          <p id="decisionExplanation">Trigger a system scan or start the pipeline to compute optimal parameters.</p>
+        </div>
+
+        <!-- Overrides & Config -->
+        <div class="pipeline-controls">
+          <div class="control-group">
+            <label for="overrideCount">Override App Count (1-20):</label>
+            <input type="number" id="overrideCount" min="1" max="20" placeholder="Auto" />
+          </div>
+          <div class="control-group">
+            <label for="overrideConcurrency">Concurrency (1-8):</label>
+            <input type="number" id="overrideConcurrency" min="1" max="8" placeholder="Auto" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Panel 3: Pipeline Operations & Simulation Controls -->
+      <section class="card glass-card span-12">
+        <div class="card-header">
+          <h2>Orchestration pipeline Console</h2>
+          <div class="ops-button-group">
+            <button class="btn btn-primary" id="btnStartPipeline">🚀 Run Generate & Deploy Pipeline</button>
+            <button class="btn btn-danger" id="btnTerminate">🛑 Terminate Active Nodes</button>
+          </div>
+        </div>
+        
+        <div class="divider"></div>
+
+        <h3>Inject Worker Build Faults (Verify Fault-Tolerance and Self-Healing)</h3>
+        <p class="card-desc">Check tenants below to simulate crashes on their first build worker thread. The coordinator will capture the crash, execute recovery protocols, and retry to heal the workspace.</p>
+        <div class="fault-injection-grid" id="faultCheckboxes">
+          <!-- Populated dynamically with 20 config checkboxes -->
+        </div>
+      </section>
+
+      <!-- Panel 4: Parallel Job Queue Telemetry Dashboard -->
+      <section class="card glass-card span-12">
+        <div class="card-header">
+          <h2>Job Queue & Compilation Matrix</h2>
+          <div class="queue-telemetry-chips">
+            <span class="chip">Active Builders: <strong id="teleActiveWorkers">0</strong></span>
+            <span class="chip">Queue Backlog: <strong id="teleQueuedJobs">0</strong></span>
+            <span class="chip">Concurrency Cap: <strong id="teleConcurrency">0</strong></span>
+          </div>
+        </div>
+        
+        <div class="job-matrix-table-container">
+          <table class="job-matrix-table">
+            <thead>
+              <tr>
+                <th>Tenant ID</th>
+                <th>Application Name</th>
+                <th>Runtime Port</th>
+                <th>Build Status</th>
+                <th>Retries Attempted</th>
+                <th>Compilation Duration</th>
+                <th>Standalone Workspace Directory</th>
+              </tr>
+            </thead>
+            <tbody id="jobMatrixBody">
+              <tr>
+                <td colspan="7" class="empty-table">Pipeline not started. Click "Run Generate & Deploy Pipeline" to begin.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Panel 5: Deployed Standalone Apps Launchpad -->
+      <section class="card glass-card span-6">
+        <h2>Deployed Applications Launchpad</h2>
+        <p class="card-desc">Generated isolated tenant codebases running in dedicated background sub-servers. Click "Launch" to verify independence.</p>
+        
+        <div class="launchpad-grid" id="launchpadList">
+          <div class="empty-launchpad">No active deployments. Start build pipeline.</div>
+        </div>
+      </section>
+
+      <!-- Panel 6: Streaming Live Logs -->
+      <section class="card glass-card span-6">
+        <h2>Coordinator Streaming Console</h2>
+        <p class="card-desc">Live pipeline tracking, compiler stdout streams, and tenant logs.</p>
+        
+        <div class="console-box" id="consoleLogs">
+          <div class="console-line system">[SYSTEM] Awaiting coordinator signals...</div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+      <p>ADAGDS &copy; 2026 - Parallel Distributed Build Coordinator. Developed for PDC Final Lab Evaluation.</p>
+    </footer>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
